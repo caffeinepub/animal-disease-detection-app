@@ -1,0 +1,102 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-add-a-camera-capture-button-to-the-animalsymptomform-component-that-opens-the-device-camera-and-allows-users-to-take-a-photo-of-the-animal",
+      "featureTitle": "Add a camera capture button to the AnimalSymptomForm component that opens the device camera and allows users to take a photo of the animal",
+      "files": [
+        "frontend/src/components/AnimalSymptomForm.tsx",
+        "frontend/src/components/CameraCapture.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "camera@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-store-the-captured-animal-photo-as-part-of-the-detection-record-in-local-storage-history-encoding-it-as-a-base64-data-url",
+      "featureTitle": "Store the captured animal photo as part of the detection record in local storage history, encoding it as a base64 data URL",
+      "files": [
+        "frontend/src/hooks/useDetectionHistory.ts",
+        "frontend/src/types/detection.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "camera@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-display-the-captured-animal-photo-in-the-detectionhistoryitem-component-as-a-thumbnail-preview",
+      "featureTitle": "Display the captured animal photo in the DetectionHistoryItem component as a thumbnail preview",
+      "files": [
+        "frontend/src/components/DetectionHistoryItem.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "camera@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-show-the-full-size-captured-animal-photo-on-the-resultspage-alongside-the-disease-detection-results",
+      "featureTitle": "Show the full-size captured animal photo on the ResultsPage alongside the disease detection results",
+      "files": [
+        "frontend/src/pages/ResultsPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "camera@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-camera-permission-handling-with-clear-user-feedback-if-camera-access-is-denied-or-unavailable",
+      "featureTitle": "Add camera permission handling with clear user feedback if camera access is denied or unavailable",
+      "files": [
+        "frontend/src/components/CameraCapture.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "camera@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

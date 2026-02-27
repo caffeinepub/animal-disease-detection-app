@@ -1,0 +1,96 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-20T03:42:39.576Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 5,
+    "implemented": 5,
+    "items": [
+      {
+        "id": "REQ-10",
+        "summary": "Display the captured animal photo in the DetectionHistoryItem component as a thumbnail preview",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/DetectionHistoryItem.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/DetectionHistoryItem.tsx"
+        ]
+      },
+      {
+        "id": "REQ-11",
+        "summary": "Show the full-size captured animal photo on the ResultsPage alongside the disease detection results",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/ResultsPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/ResultsPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-12",
+        "summary": "Add camera permission handling with clear user feedback if camera access is denied or unavailable",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/CameraCapture.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/CameraCapture.tsx"
+        ]
+      },
+      {
+        "id": "REQ-8",
+        "summary": "Add a camera capture button to the AnimalSymptomForm component that opens the device camera and allows users to take a photo of the animal",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/CameraCapture.tsx",
+          "frontend/src/components/AnimalSymptomForm.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/CameraCapture.tsx",
+          "frontend/src/components/AnimalSymptomForm.tsx"
+        ]
+      },
+      {
+        "id": "REQ-9",
+        "summary": "Store the captured animal photo as part of the detection record in local storage history, encoding it as a base64 data URL",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/types/detection.ts",
+          "frontend/src/hooks/useDetectionHistory.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/types/detection.ts",
+          "frontend/src/hooks/useDetectionHistory.ts"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "build-template/README.md",
+    "caffeine.lock.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/public/assets/generated/camera-icon.dim_64x64.png",
+    "frontend/src/camera/useCamera.ts",
+    "frontend/src/components/AnimalSymptomForm.tsx",
+    "frontend/src/components/CameraCapture.tsx",
+    "frontend/src/components/DashboardStats.tsx",
+    "frontend/src/components/DetectionHistoryItem.tsx",
+    "frontend/src/hooks/useDetectionHistory.ts",
+    "frontend/src/pages/DashboardPage.tsx",
+    "frontend/src/pages/ResultsPage.tsx",
+    "frontend/src/types/detection.ts",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

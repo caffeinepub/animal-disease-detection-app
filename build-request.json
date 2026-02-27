@@ -1,0 +1,109 @@
+{
+  "kind": "build_request",
+  "title": "Integrate camera functionality for animal photo capture",
+  "projectName": "VetAI Advisor",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-8",
+      "text": "Add a camera capture button to the AnimalSymptomForm component that opens the device camera and allows users to take a photo of the animal",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "camera app"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Camera button is visible on the detection form",
+        "Clicking the button triggers the device camera API",
+        "Users can capture a photo using their device camera",
+        "Captured photo is displayed as a preview on the form"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Store the captured animal photo as part of the detection record in local storage history, encoding it as a base64 data URL",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "camera app"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Photo data is saved alongside species, breed, age, and symptoms in the detection history",
+        "Photo persists across page reloads via localStorage",
+        "Photo can be retrieved when viewing detection history"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Display the captured animal photo in the DetectionHistoryItem component as a thumbnail preview",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Thumbnail image is displayed for detection records that include a photo",
+        "Records without photos show a placeholder or no image",
+        "Thumbnail maintains appropriate aspect ratio and size"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Show the full-size captured animal photo on the ResultsPage alongside the disease detection results",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Full animal photo is displayed prominently on the results page",
+        "Photo appears above or beside the disease detection results",
+        "Photo is responsive and fits appropriately on different screen sizes"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Add camera permission handling with clear user feedback if camera access is denied or unavailable",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ]
+      },
+      "acceptanceCriteria": [
+        "User is prompted for camera permissions when camera button is clicked",
+        "Clear error message is shown if camera access is denied",
+        "Fallback message is displayed if camera is not available on the device",
+        "User can proceed with detection form even without a photo"
+      ]
+    }
+  ],
+  "constraints": [
+    "Camera functionality must work on both desktop and mobile browsers that support MediaDevices API",
+    "Photo storage must not exceed reasonable localStorage limits (compress or limit resolution if needed)",
+    "Do not modify immutable paths: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui"
+  ],
+  "nonGoals": [
+    "AI-based image analysis or computer vision processing of the captured photos",
+    "Backend storage or processing of animal photos",
+    "Photo editing or filtering capabilities",
+    "Multiple photo capture per detection",
+    "Photo upload from device gallery (only live camera capture)"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Camera icon for the photo capture button, simple line art style in earth tones (camera-icon.dim_64x64.png)"
+    ],
+    "edits": []
+  }
+}

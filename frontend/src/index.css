@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.75rem;
+        
+        /* Earth tone palette - Light mode */
+        --background: 0.98 0.01 85;
+        --foreground: 0.25 0.02 60;
+        
+        --card: 1 0 0;
+        --card-foreground: 0.25 0.02 60;
+        
+        --popover: 1 0 0;
+        --popover-foreground: 0.25 0.02 60;
+        
+        /* Forest green primary */
+        --primary: 0.45 0.12 155;
+        --primary-foreground: 0.98 0.01 85;
+        
+        /* Warm brown secondary */
+        --secondary: 0.88 0.02 65;
+        --secondary-foreground: 0.35 0.03 55;
+        
+        --muted: 0.94 0.01 75;
+        --muted-foreground: 0.55 0.02 65;
+        
+        /* Soft orange accent */
+        --accent: 0.82 0.08 45;
+        --accent-foreground: 0.35 0.03 55;
+        
+        /* Terracotta destructive */
+        --destructive: 0.58 0.18 25;
+        --destructive-foreground: 0.98 0.01 85;
+        
+        --border: 0.90 0.01 75;
+        --input: 0.90 0.01 75;
+        --ring: 0.45 0.12 155;
+        
+        /* Chart colors - earth tones */
+        --chart-1: 0.65 0.15 35;
+        --chart-2: 0.55 0.12 145;
+        --chart-3: 0.48 0.10 85;
+        --chart-4: 0.72 0.12 55;
+        --chart-5: 0.68 0.14 45;
+        
+        --sidebar: 0.98 0.01 85;
+        --sidebar-foreground: 0.25 0.02 60;
+        --sidebar-primary: 0.45 0.12 155;
+        --sidebar-primary-foreground: 0.98 0.01 85;
+        --sidebar-accent: 0.94 0.01 75;
+        --sidebar-accent-foreground: 0.35 0.03 55;
+        --sidebar-border: 0.90 0.01 75;
+        --sidebar-ring: 0.45 0.12 155;
+    }
+
+    .dark {
+        /* Earth tone palette - Dark mode */
+        --background: 0.18 0.02 60;
+        --foreground: 0.95 0.01 85;
+        
+        --card: 0.22 0.02 65;
+        --card-foreground: 0.95 0.01 85;
+        
+        --popover: 0.20 0.02 60;
+        --popover-foreground: 0.95 0.01 85;
+        
+        /* Sage green primary */
+        --primary: 0.72 0.10 145;
+        --primary-foreground: 0.20 0.02 60;
+        
+        /* Warm taupe secondary */
+        --secondary: 0.35 0.03 55;
+        --secondary-foreground: 0.95 0.01 85;
+        
+        --muted: 0.30 0.02 65;
+        --muted-foreground: 0.70 0.02 75;
+        
+        /* Soft amber accent */
+        --accent: 0.40 0.03 60;
+        --accent-foreground: 0.95 0.01 85;
+        
+        /* Muted red destructive */
+        --destructive: 0.55 0.15 25;
+        --destructive-foreground: 0.95 0.01 85;
+        
+        --border: 0.30 0.02 65;
+        --input: 0.30 0.02 65;
+        --ring: 0.72 0.10 145;
+        
+        /* Chart colors - dark earth tones */
+        --chart-1: 0.60 0.12 35;
+        --chart-2: 0.65 0.12 145;
+        --chart-3: 0.58 0.10 85;
+        --chart-4: 0.68 0.12 55;
+        --chart-5: 0.70 0.14 45;
+        
+        --sidebar: 0.22 0.02 65;
+        --sidebar-foreground: 0.95 0.01 85;
+        --sidebar-primary: 0.72 0.10 145;
+        --sidebar-primary-foreground: 0.20 0.02 60;
+        --sidebar-accent: 0.30 0.02 65;
+        --sidebar-accent-foreground: 0.95 0.01 85;
+        --sidebar-border: 0.30 0.02 65;
+        --sidebar-ring: 0.72 0.10 145;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+        font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 700;
+        letter-spacing: -0.02em;
+    }
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}

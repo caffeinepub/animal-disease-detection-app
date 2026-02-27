@@ -1,0 +1,17 @@
+{
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup, defining routes for dashboard, detection, and results pages wrapped in a Layout component.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for backend interactions including symptom checking, disease addition, and disease retrieval with proper error handling and cache invalidation.",
+  "frontend/src/hooks/useDetectionHistory.ts": "Custom hook managing detection history in localStorage with photo compression support, functions to add records with optional photos, retrieve history, and calculate statistics for dashboard display.",
+  "frontend/src/components/Layout.tsx": "Application layout component with header navigation, logo, footer with social links, and Caffeine.ai attribution with UTM tracking.",
+  "frontend/src/components/AnimalSymptomForm.tsx": "Form component for collecting animal details (species, breed, age), symptoms, and optional photo capture with validation, backend integration, and navigation to results using search params with photo data included in detection record (fixed to not pass id/timestamp to addDetection).",
+  "frontend/src/components/DiseaseResultCard.tsx": "Card component displaying individual disease detection results with severity indicators, matched symptoms, affected species, and treatment advice.",
+  "frontend/src/components/DetectionHistoryItem.tsx": "Clickable list item component showing detection history entry with animal photo thumbnail (80x80px) or placeholder icon, animal details, date/time, and top detected disease.",
+  "frontend/src/components/DashboardStats.tsx": "Statistics summary component displaying total detections, common species, and frequently detected diseases in card layout, importing HistoryStats type from types/detection.",
+  "frontend/src/pages/DashboardPage.tsx": "Dashboard page showing statistics overview and detection history list with photo thumbnails, empty state, and navigation to results using record ID in search params.",
+  "frontend/src/pages/DetectionPage.tsx": "Detection page with hero section, feature highlights, symptom form, and important disclaimer about veterinary care.",
+  "frontend/src/pages/ResultsPage.tsx": "Results page retrieving detection data from history using search param ID, displaying full-size animal photo (if available), symptoms, matched symptoms, potential diseases with detailed cards, and professional care disclaimer.",
+  "frontend/src/index.css": "Global styles with earth-tone OKLCH color system for light and dark modes, featuring forest greens, warm browns, and soft oranges with Inter font family.",
+  "frontend/tailwind.config.js": "Tailwind configuration extending theme with earth-tone colors, custom shadows, Inter font family, and enhanced border radius for veterinary aesthetic.",
+  "frontend/src/types/detection.ts": "TypeScript interfaces for detection records including optional photo field (base64 data URL), species, breed, age, symptoms, timestamp, UUID, and result data structure with history statistics interface.",
+  "frontend/src/components/CameraCapture.tsx": "Reusable camera capture component using camera/useCamera hook with camera preview, controls (start/stop/switch/capture), comprehensive error handling for permission/not-supported/not-found/unknown error types, loading states, mobile detection for switch camera button visibility, and photo preview after capture returning base64 data URL (fixed disabled prop to use !isSupported which handles null/false correctly)."
+}

@@ -1,0 +1,136 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "AI-based animal disease detection and advice application",
+  "architectural_notes": [
+    "AI/ML integration required for disease detection",
+    "Image processing capability for analyzing animal photos",
+    "Knowledge base for disease information and advice",
+    "Camera integration for direct photo capture"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Camera icon for the photo capture button, simple line art style in earth tones (camera-icon.dim_64x64.png)",
+  "existing_features": [
+    {
+      "id": "feature-build-a-frontend-form-for-users-to-input-animal-details-and-symptoms-for-disease-detection",
+      "title": "Build a frontend form for users to input animal details and symptoms for disease detection",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-frontend-results-display-that-shows-detected-diseases-with-confidence-levels-descriptions-and-treatment-advice",
+      "title": "Create a frontend results display that shows detected diseases with confidence levels, descriptions, and treatment advice",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-frontend-dashboard-showing-detection-history-with-animal-details-and-detected-diseases",
+      "title": "Implement a frontend dashboard showing detection history with animal details and detected diseases",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-a-cohesive-visual-theme-using-warm-nature-inspired-earth-tones-greens-browns-soft-oranges-with-clean-sans-serif-typography-and-a-compassionate-professional-aesthetic-suitable-for-veterinary-and-agricultural-contexts",
+      "title": "Design a cohesive visual theme using warm, nature-inspired earth tones (greens, browns, soft oranges) with clean sans-serif typography and a compassionate, professional aesthetic suitable for veterinary and agricultural contexts",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-camera-capture-button-to-the-animalsymptomform-component-that-opens-the-device-camera-and-allows-users-to-take-a-photo-of-the-animal",
+      "title": "Add a camera capture button to the AnimalSymptomForm component that opens the device camera and allows users to take a photo of the animal",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-store-the-captured-animal-photo-as-part-of-the-detection-record-in-local-storage-history-encoding-it-as-a-base64-data-url",
+      "title": "Store the captured animal photo as part of the detection record in local storage history, encoding it as a base64 data URL",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-display-the-captured-animal-photo-in-the-detectionhistoryitem-component-as-a-thumbnail-preview",
+      "title": "Display the captured animal photo in the DetectionHistoryItem component as a thumbnail preview",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-show-the-full-size-captured-animal-photo-on-the-resultspage-alongside-the-disease-detection-results",
+      "title": "Show the full-size captured animal photo on the ResultsPage alongside the disease detection results",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-camera-permission-handling-with-clear-user-feedback-if-camera-access-is-denied-or-unavailable",
+      "title": "Add camera permission handling with clear user feedback if camera access is denied or unavailable",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "AI-based animal disease detection system",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Disease advice and recommendations feature",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Create a backend data model to store animal information including species, breed, age, and symptoms",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Implement backend logic to analyze symptoms and detect potential diseases based on predefined disease patterns",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Create backend storage for disease information including name, symptoms, affected species, severity, and treatment advice",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Integrate camera functionality for capturing animal photos",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Animal Disease Detection App",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

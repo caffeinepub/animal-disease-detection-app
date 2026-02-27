@@ -1,0 +1,99 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Integrate camera functionality for animal photo capture",
+  "requirements": [
+    {
+      "id": "REQ-8",
+      "summary": "Add camera capture button to AnimalSymptomForm that opens device camera for animal photo capture",
+      "acceptanceCriteria": [
+        "Camera button is visible on the detection form",
+        "Clicking the button triggers the device camera API",
+        "Users can capture a photo using their device camera",
+        "Captured photo is displayed as a preview on the form"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/CameraCapture.tsx",
+          "operation": "create",
+          "description": "Create a reusable camera capture component using the camera/useCamera hook. Use the generated camera icon from frontend/public/assets/generated/camera-icon.dim_64x64.png for the capture button. Verify the component's usage instructions before implementing. Implement camera preview with stable dimensions (aspect-ratio wrapper), camera controls (start/stop/switch/capture), error handling for permission/not-supported/not-found cases, loading states, and photo preview after capture. Ensure capture button is only clickable when camera is active and ready. On desktop, hide the switch camera button as only 'environment' facing mode works. Return captured photo as base64 data URL."
+        },
+        {
+          "path": "frontend/src/components/AnimalSymptomForm.tsx",
+          "operation": "modify",
+          "description": "Integrate CameraCapture component into the form. Add state to manage captured photo (base64 data URL). Add a button to open camera modal/section with the generated camera icon from frontend/public/assets/generated/camera-icon.dim_64x64.png. Display photo preview thumbnail below the button when photo is captured. Pass captured photo to detection history when saving. Update form submission to include photo data."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Store captured animal photo as base64 data URL in local storage detection history",
+      "acceptanceCriteria": [
+        "Photo data is saved alongside species, breed, age, and symptoms in the detection history",
+        "Photo persists across page reloads via localStorage",
+        "Photo can be retrieved when viewing detection history"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/types/detection.ts",
+          "operation": "create",
+          "description": "Define TypeScript interfaces for detection records including optional photo field (base64 data URL string), species, breed, age, symptoms, timestamp, UUID, and result data structure."
+        },
+        {
+          "path": "frontend/src/hooks/useDetectionHistory.ts",
+          "operation": "modify",
+          "description": "Update detection history storage logic to include optional photo field in detection records. Add photo compression or validation to ensure localStorage limits are respected. Update addDetection function to accept and store photo data. Ensure photo persists across page reloads."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Display captured animal photo thumbnail in DetectionHistoryItem component",
+      "acceptanceCriteria": [
+        "Thumbnail image is displayed for detection records that include a photo",
+        "Records without photos show a placeholder or no image",
+        "Thumbnail maintains appropriate aspect ratio and size"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/DetectionHistoryItem.tsx",
+          "operation": "modify",
+          "description": "Add conditional rendering for photo thumbnail. Display base64 image as thumbnail (max 80x80px with object-fit cover) when photo exists in detection record. Show placeholder or skip image section when no photo is present. Maintain aspect ratio and appropriate sizing for thumbnail display."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Show full-size captured animal photo on ResultsPage alongside disease detection results",
+      "acceptanceCriteria": [
+        "Full animal photo is displayed prominently on the results page",
+        "Photo appears above or beside the disease detection results",
+        "Photo is responsive and fits appropriately on different screen sizes"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ResultsPage.tsx",
+          "operation": "modify",
+          "description": "Retrieve photo from detection record using UUID search param. Display full-size photo (max-width with responsive constraints) prominently above or beside disease detection results. Conditionally render photo section only when photo exists. Ensure responsive layout that works across mobile and desktop screen sizes. Use object-fit contain to maintain aspect ratio."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Add camera permission handling with clear user feedback for denied or unavailable camera access",
+      "acceptanceCriteria": [
+        "User is prompted for camera permissions when camera button is clicked",
+        "Clear error message is shown if camera access is denied",
+        "Fallback message is displayed if camera is not available on the device",
+        "User can proceed with detection form even without a photo"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/CameraCapture.tsx",
+          "operation": "modify",
+          "description": "Implement comprehensive error handling using the camera hook's error states. Display user-friendly messages for permission denied (type: 'permission'), camera not supported (type: 'not-supported'), camera not found (type: 'not-found'), timeout (type: 'timeout'), and unknown errors. Provide retry functionality when errors occur. Ensure form can be submitted without photo - make photo capture optional."
+        }
+      ]
+    }
+  ]
+}
